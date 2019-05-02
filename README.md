@@ -7,11 +7,11 @@ If you are running Docker on Linux, the files rails new created are owned by roo
 
 `sudo chown -R $USER:users .`
 
+### Connect the database
+
 `echo "" > config/database.yml`
 
 `vi config/database.yml`
-
-### Connect the database
 
 Replace the contents of config/database.yml with the following:
 
@@ -37,6 +37,8 @@ test:
 `docker-compose build`
 
 Finally, you need to create the database. In another terminal, run:
+
+`sudo chown -R $USER:users tmp/*`
 
 `docker-compose run web rake db:create`
 
