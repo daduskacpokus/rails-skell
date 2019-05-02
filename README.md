@@ -40,13 +40,13 @@ test:
 
 Finally, you need to create the database. In another terminal, run:
 
-`sudo chown -R $USER:users tmp/*`
-
 `docker-compose run web rake db:create`
 
 ### Enjoy!
 
 You can now boot the app with:
+
+`sudo chown -R $USER:users tmp/*`
 
 `docker-compose up`
 
