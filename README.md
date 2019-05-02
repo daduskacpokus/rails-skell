@@ -5,11 +5,11 @@ FROM [docker/official](https://docs.docker.com/compose/rails/)
 
 If you are running Docker on Linux, the files rails new created are owned by root.
 
-`sudo chown -R $USER:$USER .`
+`sudo chown -R $USER:users .`
 
-Now that you’ve got a new Gemfile, you need to build the image again
+`echo "" > config/database.yml`
 
-`docker-compose build`
+`vi config/database.yml`
 
 ### Connect the database
 
@@ -33,6 +33,8 @@ test:
   <<: *default
   database: myapp_test
 ```
+
+`docker-compose build`
 
 Finally, you need to create the database. In another terminal, run:
 
