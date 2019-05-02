@@ -1,4 +1,4 @@
-#Build the project
+# Build the project
 
 `docker-compose run web rails new . --force --no-deps --database=postgresql`
 
@@ -10,11 +10,11 @@ Now that you’ve got a new Gemfile, you need to build the image again
 
 `docker-compose build`
 
-#Connect the database
+# Connect the database
 
 Replace the contents of config/database.yml with the following:
 
-`default: &default
+```default: &default
   adapter: postgresql
   encoding: unicode
   host: db
@@ -29,6 +29,6 @@ development:
 
 test:
   <<: *default
-  database: myapp_test`
+  database: myapp_test```
 
 You can now boot the app with `docker-compose up`
