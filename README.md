@@ -1,5 +1,5 @@
 FROM [docker/official](https://docs.docker.com/compose/rails/)
-## Build the project
+### Build the project
 
 `docker-compose run web rails new . --force --no-deps --database=postgresql`
 
@@ -11,7 +11,7 @@ Now that you’ve got a new Gemfile, you need to build the image again
 
 `docker-compose build`
 
-## Connect the database
+### Connect the database
 
 Replace the contents of config/database.yml with the following:
 
@@ -34,4 +34,11 @@ test:
   database: myapp_test
 ```
 
-You can now boot the app with `docker-compose up`
+Finally, you need to create the database. In another terminal, run:
+
+`docker-compose run web rake db:create`
+
+You can now boot the app with:
+
+`docker-compose up`
+
