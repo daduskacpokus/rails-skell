@@ -1,3 +1,4 @@
+FROM [docker/official](https://docs.docker.com/compose/rails/)
 ## Build the project
 
 `docker-compose run web rails new . --force --no-deps --database=postgresql`
